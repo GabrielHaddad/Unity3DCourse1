@@ -9,6 +9,10 @@ public class Score : MonoBehaviour
     public void AddToScore()
     {
         score++;
-        Debug.Log("Bumped: " + score.ToString());
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }

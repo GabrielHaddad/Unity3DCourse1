@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class FinishLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Canvas finishCanvas;
 
-    // Update is called once per frame
-    void Update()
+    void Start() 
     {
-        
+        finishCanvas.enabled = false;
     }
 
     void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Finished Level");
+            finishCanvas.enabled = true;
+            Time.timeScale = 0;
         }
     }
 }
